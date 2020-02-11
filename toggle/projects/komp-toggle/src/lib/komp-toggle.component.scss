@@ -1,0 +1,50 @@
+$color-disabled: #eaeaea;
+$color-unchecked: #acacac;
+$color-checked: #7E84FF;
+$border-width: 3px;
+$toggle-width: 3rem;
+$container-padding: 0.25rem;
+
+.wire-frame {
+  background-color: transparent !important;
+  border: 1px dashed #cdcdcd !important;
+}
+
+.toggle {
+  &-container.disabled {
+    border: $border-width solid $color-disabled;
+    .toggle-knob {
+      background-color: $color-disabled;
+    }
+  }
+  &-container.checked {
+   background-color: $color-checked;
+    border: $border-width solid $color-checked;
+  }
+  &-container {
+    width: $toggle-width;
+    height: $toggle-width/3;
+    border-radius: $toggle-width/2;
+    background-color: #fff;
+    padding: $container-padding;
+    display: flex;
+    align-items: center;
+    position: relative;
+    transition: background-color 200ms ease-in;
+    border: $border-width solid $color-unchecked;
+  }
+
+  &-knob {
+    height: $toggle-width/3;
+    width: $toggle-width/3;
+    border-radius: $toggle-width/3;
+    background-color: $color-unchecked;
+    position: absolute;
+    left: $container-padding;
+    transition: all 200ms ease-in;
+  }
+  &-checked {
+    left: calc(100% - #{($toggle-width/3) + $container-padding});
+    background-color: #fff;
+  }
+}

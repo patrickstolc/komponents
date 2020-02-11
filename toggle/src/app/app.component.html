@@ -1,0 +1,19 @@
+<form [formGroup]="formGroup">
+  <label>Developer</label>
+  <komponents-toggle
+    formControlName="developer"
+    valueTrue="yes"
+    valueFalse="no"
+  >
+  </komponents-toggle>
+
+  <label>Startup</label>
+  <komponents-toggle
+    formControlName="startup"
+    valueTrue="yes"
+    valueFalse="no"
+  >
+  </komponents-toggle>
+</form>
+
+<h3>{{value|json}}</h3>
